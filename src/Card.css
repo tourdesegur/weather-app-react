@@ -1,0 +1,40 @@
+.col-2 {
+  padding: 0px;
+}
+
+.card {
+  background-color: none;
+  width: 120px;
+  text-align: center;
+  margin: 20px 0;
+  box-shadow: rgba(37, 39, 89, 0.08) 0px 8px 8px 0;
+}
+
+.card-body {
+  padding: 0;
+}
+
+.temp-sub {
+  font-size: 28px;
+  font-weight: 400;
+}
+
+.temp-small {
+  font-size: 24px;
+  color: #595959;
+  margin: 20px 0 20px 0;
+}
+
+.t-min {
+  color: #a9a9a9;
+}
+
+.day {
+  margin: 20px 0;
+  font-size: 24px;
+}
+
+.icon-forecast {
+  max-width: 60px;
+  opacity: 0.8;
+}
