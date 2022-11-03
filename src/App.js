@@ -1,14 +1,12 @@
 import "./App.css";
-import MainCol from "./MainCol";
-import SecondCol from "./SecondCol";
+import Weather from "./Weather";
 
 export default function App() {
   return (
     <div className="App">
       <div className="container">
         <div className="row">
-          <MainCol />
-          <SecondCol />
+<Weather cityDefault="Lisbon"/>
         </div>
         <div>
           <a href="https://github.com/tourdesegur/weather-app-react">

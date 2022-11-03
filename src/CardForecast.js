@@ -1,7 +1,7 @@
 import React from "react";
-import "./Card.css";
+import "./CardForecast.css";
 
-export default function Card() {
+export default function CardForecast() {
   return (
     <div className="card">
       <div className="card-body">
@@ -11,7 +11,7 @@ export default function Card() {
             src={require(`./showerrain.png`)}
             alt=""
             className="icon-forecast"
-            id="icon"
+      
           />
         </span>
         <p className="temp-small">
