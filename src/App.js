@@ -6,7 +6,7 @@ export default function App() {
     <div className="App">
       <div className="container">
         <div className="row">
-<Weather cityDefault="Lisbon"/>
+          <Weather cityDefault="Lisbon"/>
         </div>
         <div>
           <a href="https://github.com/tourdesegur/weather-app-react">
