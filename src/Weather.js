@@ -115,7 +115,7 @@ if (weather.ready) {
                     </div>
                 </form>
 
-                <p className="quote">"Three days rain will empty any sky"</p>
+                <p className="quote">"3 days rain will empty any sky"</p>
 
                 <div className="row">
                     <p className="days">Next week</p>
