@@ -25,6 +25,7 @@ export default function Weather(props) {
     function search() {
         const apiKey = "oa394f37d882at8a5980fd67ed5ff90b";
         let url = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+        if (url)
         axios.get(url).then(showTemp);
       }
      
@@ -36,14 +37,28 @@ export default function Weather(props) {
       function changeCity(event) {
         setCity(event.target.value);
       }
+
+      function showCurrentLocation(position) {
+        console.log(position);
+        let lat = position.coords.latitude;
+        let lon = position.coords.longitude;
+        let key = "oa394f37d882at8a5980fd67ed5ff90b";
+        let url = `https://api.shecodes.io/weather/v1/current?lon=${lon}&lat=${lat}&key=${key}&units=metric`;
+      
+        axios.get(url).then(showTemp);
+      }
+      
+        function getCurrentLocation() {
+          navigator.geolocation.getCurrentPosition(showCurrentLocation);
+        }
     
 if (weather.ready) {
     return (
         <div className="row">
 
-            <div className="col-4 col-main">
+            <div className="col-12 col-lg-4 col-main">
 
-                <button type="submit" className="btn btn-current">
+                <button type="submit" className="btn btn-current" onClick={getCurrentLocation}>
                 Current city
                 </button>
                 <h1 className="city-title">{weather.city}</h1>
@@ -60,13 +75,13 @@ if (weather.ready) {
                      />
                 </span>
 
-                <div className="row">
-                    <div className="col-7">
+                <div className="row row-main-temp">
+                    <div className="col-lg-7">
                         <div>
                              <span className="temp">{Math.round(weather.temp)}</span> <span className="celsius">°</span>
                         </div>
                     </div>
-                    <div className="col-5">
+                    <div className="col-lg-5">
                          <p className="p-info">
                             <span className="humidity">Humidity: {Math.round(weather.humidity)}%</span>
                             <br />
@@ -77,20 +92,20 @@ if (weather.ready) {
 
             </div>
     
-            <div className="col-8 col-color">
+            <div className="col-12 col-lg-8 col-color">
                 <form className="search-location" onSubmit={handleSubmit}>
                     <div className="row search-row">
-                        <div className="col-9 search-box">
+                        <div className="col-lg-9 search-box">
                             <input
                             type="text"
                             className="form-control"
-                            placeholder="Enter location"
+                            placeholder="Enter location here"
                             autoFocus="on"
                             onChange={changeCity}
                             />
                         </div>
                     
-                        <div className="col-3 submit-button">
+                        <div className="col-lg-3 submit-button">
                             <input
                             type="submit"
                             value="Search"

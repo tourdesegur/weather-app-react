@@ -4,15 +4,9 @@ body {
   background-color: #c0c0c0;
 }
 
-button,
-form,
-.p-info {
-  font-family: "Activ Grotesk", "Roboto", "Helvetica Neue", sans-serif;
-}
-
 .container {
   width: fit-content;
-  margin: 3em 2em;
+  margin: 30px auto;
   background-color: white;
   border: 0px solid #595959;
   border-radius: 10px;
