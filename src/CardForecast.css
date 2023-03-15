@@ -2,6 +2,10 @@
   padding: 0px;
 }
 
+.row-weather {
+  margin: 0 auto;
+}
+
 .card {
   background-color: none;
   width: 120px;
@@ -23,7 +27,7 @@
 .temp-small {
   font-size: 24px;
   color: #595959;
-  margin: 20px 0 20px 0;
+  margin: 20px 0;
 }
 
 .t-min {
@@ -38,4 +42,35 @@
 .icon-forecast {
   max-width: 60px;
   opacity: 0.8;
+}
+
+@media (max-width: 1199px) {
+  .card {
+    width: 110px;
+  }
+}
+
+@media (max-width: 991px) {
+  .card {
+    width: 130px;
+  }
+}
+
+@media (max-width: 767px) {
+  .card {
+    width: 95px;
+  }
+  .icon-forecast {
+    max-width: 35px;
+  }
+
+  .temp-small {
+    font-size: 18px;
+    margin: 10px 0;
+  }
+
+  .day {
+    margin: 10px 0;
+    font-size: 22px;
+  }
 }

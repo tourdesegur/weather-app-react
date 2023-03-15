@@ -76,12 +76,12 @@ if (weather.ready) {
                 </span>
 
                 <div className="row row-main-temp">
-                    <div className="col-lg-7">
-                        <div>
-                             <span className="temp">{Math.round(weather.temp)}</span> <span className="celsius">°</span>
+                    <div className="col-lg-6 col-md-12">
+                        <div className="row">
+                             <div className="temp col-10">{Math.round(weather.temp)}</div> <div className="celsius col-2">°</div>
                         </div>
                     </div>
-                    <div className="col-lg-5">
+                    <div className="col-lg-6 col-md-12">
                          <p className="p-info">
                             <span className="humidity">Humidity: {Math.round(weather.humidity)}%</span>
                             <br />
@@ -99,7 +99,7 @@ if (weather.ready) {
                             <input
                             type="text"
                             className="form-control"
-                            placeholder="Enter location here"
+                            placeholder="Enter location"
                             autoFocus="on"
                             onChange={changeCity}
                             />
@@ -115,7 +115,7 @@ if (weather.ready) {
                     </div>
                 </form>
 
-                <p className="quote">"3 days rain will empty any sky"</p>
+                <p className="quote">"Three days rain will empty any sky"</p>
 
                 <div className="row">
                     <p className="days">Next week</p>

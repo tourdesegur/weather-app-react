@@ -6,11 +6,29 @@ import ForecastData from "./ForecastData";
 export default function CardForecast(props) {
   const [loaded, setLoaded] = useState(false);
   const [forecast, setForecast] = useState(null);
-
+  /*const [numberToMap, setNumberToMap] = useState(5);
+  const minHandler = () => setNumberToMap(2);
+  const maxHandler = () => setNumberToMap(5);
+  
+*/
   useEffect(() => {
     setLoaded(false);
   }, [props.city]);
 
+  /*useEffect(() => {
+    const minMedia = window.matchMedia("(max-width: 767px)");
+    minMedia.addEventListener("change", minHandler);
+
+    const maxMedia = window.matchMedia("(min-width: 768px)");
+    maxMedia.addEventListener("change", maxHandler);
+    
+    return () => {
+      minMedia.removeEventListener("change", minHandler);
+      maxMedia.removeEventListener("change", maxHandler);
+    };
+  })
+  
+*/
   function handleApiCall(response) {
     console.log(response);
     setForecast(response.data.daily);
@@ -19,7 +37,7 @@ export default function CardForecast(props) {
   if (loaded) {
     return (
       <div className="BlockForecast">
-        <div className="row">
+        <div className="row row-weather">
           {forecast.map(function (infoForecast, index) {
             if (index < 5) {
               return (
@@ -28,7 +46,7 @@ export default function CardForecast(props) {
                 </div>
               );
             } else {
-              return null;
+              return null; 
             }
           })}
         </div>
